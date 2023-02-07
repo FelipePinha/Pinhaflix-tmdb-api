@@ -1,0 +1,61 @@
+@use "../../scss/typography";
+@use "../../scss/variables";
+@import "../../scss/mixin";
+
+.header-bar {
+    background-color: #000;
+    @include flex(center, space-between);
+    position: fixed;
+    height: 24px;
+    width: 100%;
+    padding: 1.6rem 2.2rem;
+    z-index: 99;
+    @media (max-width: 425px) {
+        padding: 1.6rem 1rem;
+    }
+
+    .logo-container {
+        .logo {
+            font-size: typography.$big;
+            color: variables.$main-color;
+            cursor: pointer;
+
+            @media (max-width: 425px) {
+                font-size: typography.$medium;
+            }
+        }
+    }
+
+    .header-right-content {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: typography.$small;
+
+        a {
+            text-decoration: none;
+            position: relative;
+        }
+        a:hover {
+            color: variables.$main-color;
+        }
+
+        a::after {
+            content: "";
+            width: 0;
+            height: 2px;
+            background-color: variables.$main-color;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: width 0.2s ease-in-out;
+        }
+        a:hover::after {
+            width: 100%;
+        }
+    }
+
+    .active {
+        color: variables.$main-color;
+    }
+}
