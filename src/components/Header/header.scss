@@ -1,9 +1,10 @@
 @use "../../scss/typography";
 @use "../../scss/variables";
 @import "../../scss/mixin";
+@import "../../scss/breakpoint";
 
 .header-bar {
-    background-color: #000;
+    background-color: variables.$background-black;
     @include flex(center, space-between);
     position: fixed;
     height: 24px;
@@ -12,6 +13,17 @@
     z-index: 99;
     @media (max-width: 425px) {
         padding: 1.6rem 1rem;
+    }
+
+    .open-mobile-menu {
+        color: variables.$txt-primary;
+        display: none;
+    }
+
+    @include mobile {
+        .open-mobile-menu {
+            display: block;
+        }
     }
 
     .logo-container {
@@ -27,20 +39,25 @@
     }
 
     .header-right-content {
+        font-size: typography.$small;
         display: flex;
         align-items: center;
-        gap: 15px;
-        font-size: typography.$small;
 
-        a {
+        .links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .links a {
+            color: variables.$txt-primary;
             text-decoration: none;
             position: relative;
         }
-        a:hover {
+        .links a:hover {
             color: variables.$main-color;
         }
 
-        a::after {
+        .links a::after {
             content: "";
             width: 0;
             height: 2px;
@@ -50,12 +67,49 @@
             left: 0;
             transition: width 0.2s ease-in-out;
         }
-        a:hover::after {
+        .links a:hover::after {
             width: 100%;
         }
-    }
 
-    .active {
-        color: variables.$main-color;
+        @include mobile {
+            background-color: variables.$background-black;
+            width: 100%;
+            height: 100vh;
+            flex-direction: column;
+            align-items: flex-start;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            padding: 15px;
+            gap: 50px;
+            transition: right 0.3s ease-in-out;
+
+            .links {
+                flex-direction: column;
+                font-size: 1.6rem;
+            }
+
+            .mobile-menu-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+
+            .mobile-menu-logo {
+                font-size: 1.5rem;
+                color: variables.$main-color;
+            }
+
+            .close-mobile-menu {
+                color: white;
+                cursor: pointer;
+                font-size: 1.8rem;
+            }
+        }
     }
+}
+
+.menu-is-active {
+    right: 0 !important;
 }
