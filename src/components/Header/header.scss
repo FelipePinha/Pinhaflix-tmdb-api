@@ -6,11 +6,9 @@
 .header-bar {
     background-color: variables.$background-black;
     @include flex(center, space-between);
-    position: fixed;
     height: 24px;
     width: 100%;
     padding: 1.6rem 2.2rem;
-    z-index: 99;
     @media (max-width: 425px) {
         padding: 1.6rem 1rem;
     }
@@ -71,6 +69,10 @@
             width: 100%;
         }
 
+        .mobile-menu-logo {
+            display: none;
+        }
+
         @include mobile {
             background-color: variables.$background-black;
             width: 100%;
@@ -99,6 +101,7 @@
             .mobile-menu-logo {
                 font-size: 1.5rem;
                 color: variables.$main-color;
+                display: block;
             }
 
             .close-mobile-menu {

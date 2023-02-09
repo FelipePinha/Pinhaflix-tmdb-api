@@ -1,3 +1,9 @@
+import { Description } from "../components/Description/Description";
+
 export const Home = () => {
-    return <h1>Home</h1>;
+    return (
+        <>
+            <Description />
+        </>
+    );
 };

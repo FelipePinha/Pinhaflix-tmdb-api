@@ -1,25 +1,22 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { X, List } from "phosphor-react";
 import "./header.scss";
 
 export const Header = () => {
     const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleToggleMenu = (e: any) => {
         setMobileMenuIsOpen(!mobileMenuIsOpen);
-        console.log("className 👉️", e.currentTarget.className);
-
-        if (e.currentTarget.classList.contains("menu-is-open")) {
-            console.log("Element contains class");
-        } else {
-            console.log("Element does NOT contain class");
-        }
     };
 
     return (
         <header className="header-bar">
             <div className="logo-container">
-                <strong className="logo">PINHAFLIX</strong>
+                <strong className="logo" onClick={() => navigate("/")}>
+                    PINHAFLIX
+                </strong>
             </div>
 
             <List
