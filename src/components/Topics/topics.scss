@@ -1,0 +1,19 @@
+@use "../../scss/variables";
+@import "../../scss/mixin";
+
+.topic-section {
+    padding: 1.6rem 2.2rem;
+    margin: auto;
+    @media (max-width: 425px) {
+        padding: 1.6rem 1rem;
+    }
+
+    .topic-header {
+        @include flex(center, space-between);
+
+        .topic-title {
+            color: variables.$txt-primary;
+            font-size: 1.4rem;
+        }
+    }
+}

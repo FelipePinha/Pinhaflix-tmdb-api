@@ -1,0 +1,16 @@
+@use "../../scss/variables";
+
+li {
+    a {
+        cursor: grab;
+
+        img {
+            height: 20rem;
+        }
+
+        .movie-title {
+            color: variables.$txt-primary;
+            font-size: 1.2rem;
+        }
+    }
+}
