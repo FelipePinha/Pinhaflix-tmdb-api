@@ -1,11 +1,19 @@
 @use "../../scss/variables";
+@import "../../scss/mixin";
 
 li {
     a {
-        cursor: grab;
+        cursor: pointer;
+        @include flex-col;
+        gap: 10px;
+
+        &:active {
+            cursor: grab;
+        }
 
         img {
             height: 20rem;
+            border-radius: 1rem;
         }
 
         .movie-title {
