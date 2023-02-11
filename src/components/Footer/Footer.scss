@@ -1,0 +1,45 @@
+@use "../../scss/variables";
+@import "../../scss/mixin";
+
+a {
+    color: variables.$txt-primary;
+}
+
+footer {
+    background-color: variables.$background-black;
+    padding: 3rem;
+
+    .footer-content {
+        @include flex-col;
+        align-items: center;
+        gap: 3rem;
+
+        .footer-logo-container {
+            a {
+                strong {
+                    color: variables.$main-color;
+                    font-size: 2.2rem;
+                }
+            }
+        }
+
+        .footer-info-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3.5rem;
+
+            div {
+                @include flex-col;
+                gap: 1rem;
+
+                a {
+                    font-size: 0.8rem;
+
+                    &:hover {
+                        color: variables.$main-color;
+                    }
+                }
+            }
+        }
+    }
+}

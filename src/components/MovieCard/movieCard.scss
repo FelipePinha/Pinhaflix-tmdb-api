@@ -14,11 +14,15 @@ li {
         img {
             height: 20rem;
             border-radius: 1rem;
+            @media (max-width: 400px) {
+                height: 15rem;
+            }
         }
 
         .movie-title {
             color: variables.$txt-primary;
-            font-size: 1.2rem;
+            font-size: 1rem;
+            text-overflow: ellipsis;
         }
     }
 }

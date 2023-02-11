@@ -44,7 +44,7 @@ export const MovieList = (props: MovieListProps) => {
                         600: {
                             slidesPerView: 3,
                         },
-                        1000: {
+                        840: {
                             slidesPerView: 4,
                         },
                         1200: {
