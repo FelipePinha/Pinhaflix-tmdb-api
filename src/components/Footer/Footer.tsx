@@ -34,6 +34,18 @@ export const Footer = () => {
                         <Link to="/">Top IMDB</Link>
                     </div>
                 </div>
+                <div className="line"></div>
+                <div className="made-by">
+                    <span>
+                        Feito por:{" "}
+                        <a
+                            target="_blank"
+                            href="https://github.com/FelipePinha"
+                        >
+                            Felipe Carvalho
+                        </a>
+                    </span>
+                </div>
             </div>
         </footer>
     );
