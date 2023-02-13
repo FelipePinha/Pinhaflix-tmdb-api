@@ -1,3 +1,4 @@
+import { Play } from "phosphor-react";
 import { Link } from "react-router-dom";
 import "./movieCard.scss";
 
@@ -14,7 +15,11 @@ export const MovieCard = (props: MovieCardProps) => {
                 <div
                     className="movie-img"
                     style={{ backgroundImage: `url(${props.posterPath})` }}
-                ></div>
+                >
+                    <button className="play">
+                        <Play size={28} weight="fill" />
+                    </button>
+                </div>
                 <span className="movie-title">{props.originalTitle}</span>
             </Link>
         </li>
