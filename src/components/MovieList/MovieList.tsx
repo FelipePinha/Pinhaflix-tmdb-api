@@ -7,18 +7,7 @@ import apiConfig from "../../api/apiConfig";
 import { MovieCard } from "../MovieCard/MovieCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-interface MovieListProps {
-    queryName: string;
-    type: "movie/" | "tv/";
-    param: string;
-}
-
-interface apiResults {
-    poster_path: string;
-    original_title: string;
-    original_name: string;
-    id: number;
-}
+import { MovieListProps, apiResults } from "../../types/component_types";
 
 export const MovieList = (props: MovieListProps) => {
     const { data, isLoading } = useApi({

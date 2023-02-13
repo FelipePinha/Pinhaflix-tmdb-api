@@ -11,7 +11,10 @@ export const MovieCard = (props: MovieCardProps) => {
     return (
         <li>
             <Link to="">
-                <img src={props.posterPath} alt={props.originalTitle} />
+                <div
+                    className="movie-img"
+                    style={{ backgroundImage: `url(${props.posterPath})` }}
+                ></div>
                 <span className="movie-title">{props.originalTitle}</span>
             </Link>
         </li>

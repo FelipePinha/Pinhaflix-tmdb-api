@@ -29,7 +29,7 @@ export const Topics = () => {
             </section>
             <section className="topic-section">
                 <div className="topic-header">
-                    <h2 className="topic-title">Séries populares</h2>
+                    <h2 className="topic-title">Séries atuais</h2>
                     <TopicButton />
                 </div>
                 <MovieList

@@ -37,12 +37,12 @@ export const Footer = () => {
                 <div className="line"></div>
                 <div className="made-by">
                     <span>
-                        Feito por:{" "}
+                        FEITO POR{"  "}
                         <a
                             target="_blank"
                             href="https://github.com/FelipePinha"
                         >
-                            Felipe Carvalho
+                            FELIPE CARVALHO
                         </a>
                     </span>
                 </div>

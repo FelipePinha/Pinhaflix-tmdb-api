@@ -11,12 +11,13 @@ li {
             cursor: grab;
         }
 
-        img {
-            height: 20rem;
+        .movie-img {
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-top: 160%;
             border-radius: 1rem;
-            @media (max-width: 400px) {
-                height: 15rem;
-            }
+            margin-bottom: 1rem;
         }
 
         .movie-title {
