@@ -46,13 +46,11 @@ export const MovieList = (props: MovieListProps) => {
                             <SwiperSlide key={movie.id}>
                                 <MovieCard
                                     id={movie.id}
-                                    originalTitle={
-                                        movie.original_title ||
-                                        movie.original_name
-                                    }
+                                    originalTitle={movie.title || movie.name}
                                     posterPath={apiConfig.image(
                                         movie.poster_path
                                     )}
+                                    type={props.type}
                                     key={movie.id}
                                 />
                             </SwiperSlide>

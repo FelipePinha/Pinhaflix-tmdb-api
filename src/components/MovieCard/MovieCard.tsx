@@ -6,12 +6,13 @@ interface MovieCardProps {
     id: number;
     posterPath: string;
     originalTitle: string;
+    type: string;
 }
 
 export const MovieCard = (props: MovieCardProps) => {
     return (
         <li>
-            <Link to="">
+            <Link to={`/${props.type}${props.id}`}>
                 <div
                     className="movie-img"
                     style={{ backgroundImage: `url(${props.posterPath})` }}

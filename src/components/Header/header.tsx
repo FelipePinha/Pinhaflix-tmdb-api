@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { X, List } from "phosphor-react";
 import "./header.scss";
 
@@ -38,9 +38,15 @@ export const Header = () => {
                 </header>
 
                 <nav className="links">
-                    <a href="#">Home</a>
-                    <a href="#">Filmes</a>
-                    <a href="#">Séries</a>
+                    <Link to="/" onClick={handleToggleMenu}>
+                        Home
+                    </Link>
+                    <Link to="/" onClick={handleToggleMenu}>
+                        Filmes
+                    </Link>
+                    <Link to="/" onClick={handleToggleMenu}>
+                        Séries
+                    </Link>
                 </nav>
             </div>
         </header>
