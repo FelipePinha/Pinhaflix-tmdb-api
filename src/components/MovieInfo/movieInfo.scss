@@ -1,0 +1,57 @@
+@use "../../scss/variables";
+
+.movie-info-container {
+    padding: 1rem;
+    color: variables.$txt-primary;
+
+    .underline::after {
+        content: "";
+        width: 100%;
+        min-width: 200px;
+        height: 1px;
+        border-radius: 1rem;
+        background-color: rgba($color: #ffffff, $alpha: 0.9);
+        display: block;
+        margin: 1rem 0;
+    }
+
+    .movie-title {
+        margin: 1rem 0;
+
+        span {
+            font-size: 1rem;
+        }
+        .title {
+            font-size: 2.5rem;
+
+            @media (max-width: 340px) {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .infos {
+        width: 80%;
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            .star {
+                color: variables.$yellow;
+            }
+        }
+
+        .info {
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .sinopse {
+                text-align: justify;
+            }
+        }
+    }
+}

@@ -7,89 +7,29 @@
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 
-    @media (max-width: 365px) {
-        align-items: flex-end;
-    }
-
-    .movie-info {
-        padding: 2rem;
-        @include flex-col;
+    .genres {
+        width: 100%;
+        display: flex;
         gap: 2rem;
-        font-weight: bold;
+        padding: 1.2rem;
+        background-color: rgba($color: #000000, $alpha: 0.8);
 
-        .title-box {
-            color: variables.$txt-primary;
-            h2 {
-                font-size: 3rem;
-                margin-top: 0.4rem;
-
-                @media (max-width: 900px) {
-                    & {
-                        font-size: 2rem;
-                    }
-                }
-                @media (max-width: 576px) {
-                    & {
-                        font-size: 1.6rem;
-                    }
-                }
-            }
-
-            .release {
-                font-size: 1rem;
-            }
-
-            .rating-box {
-                margin-top: 1rem;
-                display: flex;
-                align-items: center;
-                gap: 0.2rem;
-                font-size: 1.4rem;
-
-                .star {
-                    color: variables.$yellow;
-                }
-            }
+        @media (max-width: 340px) {
+            gap: 0.7rem;
         }
 
-        .banner-buttons {
-            display: flex;
-            gap: 2rem;
+        .genre {
+            border: 2px solid variables.$txt-primary;
+            border-radius: 1rem;
+            padding: 0.6rem 1rem;
+            color: variables.$txt-primary;
+            font-size: 0.8rem;
+            cursor: default;
 
-            @media (max-width: 365px) {
-                & {
-                    flex-direction: column;
-                }
-            }
-
-            button {
-                padding: 1rem 2rem;
-                border: none;
-                cursor: pointer;
-                border-radius: 1.2rem;
-                font-size: 1.2rem;
-            }
-
-            .watch-trailer-button {
-                background-color: variables.$main-color;
-                color: variables.$txt-primary;
-                transition: background 0.3s ease;
-
-                &:hover {
-                    background-color: variables.$light-red;
-                }
-            }
-
-            .read-more-button {
-                background-color: variables.$grey;
-                color: variables.$background-black;
-                transition: filter 0.3s ease;
-
-                &:hover {
-                    filter: brightness(1.2);
-                }
+            @media (max-width: 381px) {
+                padding: 0.6rem;
             }
         }
     }

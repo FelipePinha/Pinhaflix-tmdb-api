@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import useApi from "../api/useApi";
 
 import { Banner } from "../components/Banner/Banner";
+import { MovieInfo } from "../components/MovieInfo/MovieInfo";
 
 export const Details = () => {
     const { type, id } = useParams();
@@ -13,18 +14,18 @@ export const Details = () => {
 
     if (isLoading) return <h1>espera!!</h1>;
 
-    // console.log(data.revenue);
+    // console.log(data.first_air_date);
     // console.log(data.release_date);
     return (
         <>
-            <Banner
-                poster={data.backdrop_path}
-                title={data.title ? data.title : data.name}
-                date={
-                    data.release_date ? data.release_date : data.first_air_date
-                }
+            <Banner poster={data.backdrop_path} genres={data.genres} />
+            <MovieInfo
+                sinopse={data.overview}
                 rating={data.vote_average}
-                synopsis={data.overview}
+                vote_count={data.vote_count}
+                status={data.status}
+                year={data.release_date || data.first_air_date}
+                title={data.title || data.name}
             />
         </>
     );
