@@ -33,6 +33,25 @@
     .infos {
         width: 80%;
 
+        .genres {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            .genre {
+                border: 2px solid variables.$txt-primary;
+                border-radius: 1rem;
+                padding: 0.5rem;
+                color: variables.$txt-primary;
+                font-size: 0.7rem;
+                cursor: default;
+
+                @media (max-width: 381px) {
+                    padding: 0.6rem;
+                }
+            }
+        }
+
         .rating {
             display: flex;
             align-items: center;

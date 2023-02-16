@@ -1,24 +1,33 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import useApi from "../api/useApi";
 
 import { Banner } from "../components/Banner/Banner";
 import { MovieInfo } from "../components/MovieInfo/MovieInfo";
+import { Trailer } from "../components/Trailer/Trailer";
 
 export const Details = () => {
+    const [modalIsActive, setModalIsActive] = useState(false);
     const { type, id } = useParams();
+
     const { data, isLoading } = useApi({
         queryName: `details-${id}`,
         type: `${type}/`,
         param: `${id}`,
     });
 
+    const handleToggleModal = () => {
+        setModalIsActive(!modalIsActive);
+    };
+
     if (isLoading) return <h1>espera!!</h1>;
 
-    // console.log(data.first_air_date);
-    // console.log(data.release_date);
     return (
         <>
-            <Banner poster={data.backdrop_path} genres={data.genres} />
+            <Banner
+                poster={data.backdrop_path}
+                handleToggleModal={handleToggleModal}
+            />
             <MovieInfo
                 sinopse={data.overview}
                 rating={data.vote_average}
@@ -26,6 +35,14 @@ export const Details = () => {
                 status={data.status}
                 year={data.release_date || data.first_air_date}
                 title={data.title || data.name}
+                genres={data.genres}
+            />
+
+            <Trailer
+                modal={modalIsActive}
+                handleToggleModal={handleToggleModal}
+                id={data.id}
+                type={type}
             />
         </>
     );
