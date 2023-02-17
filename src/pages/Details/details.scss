@@ -1,0 +1,19 @@
+@use "../../scss/variables";
+
+.similar-movies-container {
+    padding: 1.6rem 2.2rem;
+    margin: auto;
+    @media (max-width: 425px) {
+        padding: 1.6rem 1rem;
+    }
+
+    .topic-title-box {
+        h2 {
+            color: variables.$txt-primary;
+            font-size: 1.4rem;
+            @media (max-width: 370px) {
+                font-size: 1.1rem;
+            }
+        }
+    }
+}

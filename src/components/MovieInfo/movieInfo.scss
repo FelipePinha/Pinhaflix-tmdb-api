@@ -1,8 +1,12 @@
 @use "../../scss/variables";
 
 .movie-info-container {
-    padding: 1rem;
+    padding: 1.6rem 2.2rem;
     color: variables.$txt-primary;
+
+    @media (max-width: 425px) {
+        padding: 1.6rem 1rem;
+    }
 
     .underline::after {
         content: "";

@@ -1,6 +1,6 @@
 export interface MovieListProps {
     queryName: string;
-    type: "movie/" | "tv/";
+    type: "movie/" | "tv/" | string;
     param: string;
 }
 

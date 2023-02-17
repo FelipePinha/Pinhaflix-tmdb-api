@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import useApi from "../api/useApi";
+import useApi from "../../api/useApi";
 
-import { Banner } from "../components/Banner/Banner";
-import { MovieInfo } from "../components/MovieInfo/MovieInfo";
-import { Trailer } from "../components/Trailer/Trailer";
+import { Banner } from "../../components/Banner/Banner";
+import { MovieInfo } from "../../components/MovieInfo/MovieInfo";
+import { Trailer } from "../../components/Trailer/Trailer";
+import { MovieList } from "../../components/MovieList/MovieList";
+
+import "./details.scss";
 
 export const Details = () => {
     const [modalIsActive, setModalIsActive] = useState(false);
@@ -44,6 +47,16 @@ export const Details = () => {
                 id={data.id}
                 type={type}
             />
+            <section className="similar-movies-container">
+                <div className="topic-title-box">
+                    <h2>Filmes similares</h2>
+                </div>
+                <MovieList
+                    queryName={`similar-${data.id}`}
+                    param={`${data.id}/similar`}
+                    type={`${type}/`}
+                />
+            </section>
         </>
     );
 };

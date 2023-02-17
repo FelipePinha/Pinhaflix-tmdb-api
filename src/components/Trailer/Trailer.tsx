@@ -20,7 +20,8 @@ export const Trailer = (props: TrailerProps) => {
 
     if (isLoading) return <div></div>;
 
-    const response = data?.data.results;
+    const key = data?.data.results[0].key;
+
     return (
         <div
             onClick={props.handleToggleModal}
@@ -28,7 +29,7 @@ export const Trailer = (props: TrailerProps) => {
         >
             <div className="modal" onClick={(e) => e.stopPropagation()}>
                 <iframe
-                    src={`https://youtube.com/embed/${response[0].key}`}
+                    src={`https://youtube.com/embed/${key}`}
                     width="100%"
                     height="100%"
                     title="video"
