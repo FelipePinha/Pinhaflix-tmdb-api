@@ -1,15 +1,6 @@
 import "./movieInfo.scss";
 import { Star } from "phosphor-react";
-
-interface MovieInfoProps {
-    sinopse: string;
-    status: string;
-    title: string;
-    year: string;
-    rating: number;
-    vote_count: number;
-    genres: string[];
-}
+import { MovieInfoProps } from "../../types/component_types";
 
 export const MovieInfo = (props: MovieInfoProps) => {
     const [year] = props.year.split("-");

@@ -1,13 +1,8 @@
 import axios from "axios";
 import { useQuery } from "react-query";
-import "./trailer.scss";
+import { TrailerProps } from "../../types/component_types";
 
-interface TrailerProps {
-    modal: boolean;
-    handleToggleModal: () => void;
-    id: number;
-    type: string | undefined;
-}
+import "./trailer.scss";
 
 export const Trailer = (props: TrailerProps) => {
     const { data, isLoading } = useQuery(`trailer-${props.id}`, () => {
